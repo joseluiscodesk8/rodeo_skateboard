@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const DynamicLogo = dynamic(() => import('../components/Logo'));
 const DynamicHeader = dynamic(() => import('../components/Header'));
+const DynamicSlider = dynamic(() => import('../components/Slider'));
 
 export default function Home() {
   const [isLogoAnimationComplete, setIsLogoAnimationComplete] = useState(false);
@@ -18,7 +19,10 @@ export default function Home() {
   return (
     <>
       {isLogoAnimationComplete && (
-          <DynamicHeader />
+          <div>
+            <DynamicHeader />
+            <DynamicSlider />
+          </div>
       )}
       <DynamicLogo onAnimationComplete={handleAnimationComplete} />
     </>

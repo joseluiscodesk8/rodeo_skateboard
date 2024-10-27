@@ -1,2 +1,7 @@
 @use "./components/Logo";
 @use "./components/Header";
+
+.Main {
+    position: relative;
+    z-index: -10000;
+}
