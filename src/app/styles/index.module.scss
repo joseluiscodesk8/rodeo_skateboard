@@ -4,4 +4,51 @@
 .Main {
     position: relative;
     z-index: -10000;
+    transform: translate(0,20px);
+}
+
+.street {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 700px;
+    height: 450px;
+    transform: translate(0,45px);
+    padding: 2%;
+
+    & div {
+        width: 85%;
+        height: 70px;
+        margin: auto;
+        border-radius: 50px;
+        box-shadow: 5px 5px 5px #000, inset 10px 10px 5px;
+
+        & h2 {
+            padding: 3%;
+            font-size: 2.8rem;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            text-shadow: 0 5px 5px #000;
+        }
+    }
+
+    & div:nth-child(1) {
+        background-image: url("/skate.jpg");
+    }
+    & div:nth-child(2) {
+        background-image: url("/tablas.jpg");
+        background-position: 15%;
+        background-size: 205px;
+    }
+    & div:nth-child(3) {
+        background-image: url("/shoes.jpg");
+        background-size: 205px;
+    }
+    & div:nth-child(4) {
+        background-image: url("/truck.jpeg");
+        background-size: 180px;
+    }
+    
 }
