@@ -1,0 +1,79 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    & .mapContainer {
+        margin: 20px auto;
+        width: 90%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 0 5px #000;
+    }
+  
+    & .socialMedia {
+      display: flex;
+      gap: 15px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+  
+      a {
+        color: #333;
+        &:hover {
+          color: #0073e6;
+        }
+      }
+    }
+  
+    & .locationInfo {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+  
+      .locationIcon {
+        margin-right: 8px;
+        font-size: 1.2rem;
+      }
+    }
+  
+    & .brands {
+        width: 100%;
+        height: 450px;
+       
+      h4 {
+        margin-bottom: 10px;
+        padding: 2%;
+        color: #333;
+      }
+  
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    
+        height: 90%;
+        background-image: url("https://i.ibb.co/FbPVBNz/1000118515.png");
+        background-repeat: no-repeat;
+        background-position: -50% 100%;
+        
+  
+        li {
+          font-size: 0.9rem;
+          padding: 2%;
+        }
+      }
+    }
+
+    & .sk8 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+        border-top: 1px solid;
+        margin: 20px auto;
+    }
+  }
+  

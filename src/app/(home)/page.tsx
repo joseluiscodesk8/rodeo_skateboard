@@ -25,7 +25,7 @@ export default function Home() {
           <div>
             <DynamicHeader />
             <DynamicSlider />
-            <DynamicSection />
+            <DynamicSection /> 
             <DynamicBegon />
             <DynamicFooter />
           </div>

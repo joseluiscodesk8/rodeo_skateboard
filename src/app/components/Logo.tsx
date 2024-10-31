@@ -10,25 +10,27 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ onAnimationComplete }) => {
-  const [shouldAnimate, setShouldAnimate] = useState(true); // Se mantiene animado al cargar la página
+  const [shouldAnimate, setShouldAnimate] = useState(true); // Mantener animado al cargar la página
+  const [isHidden, setIsHidden] = useState(false); // Estado para controlar la visibilidad
 
   return (
-    <div className={styles.logoContainer}>
+    <div className={`${styles.logoContainer} ${isHidden ? styles.hidden : ""}`}>
       <motion.div
-        initial={{ opacity: 0, scale: 0.5, rotate: 0 }} // Posición inicial (pequeño y sin opacidad)
-        animate={shouldAnimate ? { opacity: 1, scale: 1, rotate: 360 } : {}} // Animación de entrada girando y escalando
-        transition={{ duration: 2, ease: "easeInOut" }} // Duración de la animación de giro y escala
+        initial={{ opacity: 0, scale: 0.5, rotate: 0 }} // Posición inicial
+        animate={shouldAnimate ? { opacity: 1, scale: 1, rotate: 360 } : {}} // Animación de entrada
+        transition={{ duration: 2, ease: "easeInOut" }}
         onAnimationComplete={() => {
           setTimeout(() => {
-            setShouldAnimate(false); // Desaparecer después de detenerse
-            onAnimationComplete(); // Notify parent that animation is complete
-          }, 1000); // Esperar 1 segundo antes de desaparecer
+            setShouldAnimate(false); // Detener la animación
+            onAnimationComplete(); // Notificar al padre
+            setIsHidden(true); // Ocultar después de la animación
+          }, 1000); // Esperar 1 segundo antes de ocultar
         }}
       >
         <motion.picture
-          initial={{ opacity: 1 }} // Mantener visible después de la animación
-          animate={{ opacity: shouldAnimate ? 0 : 1 }} // Desvanecerse al terminar
-          transition={{ delay: 3, duration: 1 }} // Desaparecer después de 3 segundos
+          initial={{ opacity: 1 }}
+          animate={{ opacity: shouldAnimate ? 0 : 1 }}
+          transition={{ delay: 3, duration: 1 }}
         >
           <Image
             src={"https://i.ibb.co/FbPVBNz/1000118515.png"}
