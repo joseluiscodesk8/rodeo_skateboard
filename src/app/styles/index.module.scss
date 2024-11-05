@@ -9,3 +9,35 @@
     z-index: -10000;
 }
 
+.clothesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .clothingItem {
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+  
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  
+    h3 {
+      margin: 10px 0;
+      font-size: 1.5rem;
+    }
+  
+    p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+  }
+  

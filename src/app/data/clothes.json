@@ -1,0 +1,35 @@
+{
+    "clothes": [
+      {
+        "image": "https://shop.thrashermagazine.com/cdn/shop/files/FLAME-WOMENST-SHIRT-BLACKGREYTIEDYE-1.jpg?v=1687890928",
+        "brand": "BrandA",
+        "price": 79.99,
+        "stock": 25
+      },
+      {
+        "image": "https://shop.thrashermagazine.com/cdn/shop/files/FLAME-WOMENST-SHIRT-BLACKGREYTIEDYE-1.jpg?v=1687890928",
+        "brand": "BrandB",
+        "price": 29.99,
+        "stock": 50
+      },
+      {
+        "image": "https://shop.thrashermagazine.com/cdn/shop/files/FLAME-WOMENST-SHIRT-BLACKGREYTIEDYE-1.jpg?v=1687890928",
+        "brand": "BrandC",
+        "price": 49.99,
+        "stock": 30
+      },
+      {
+        "image": "https://shop.thrashermagazine.com/cdn/shop/files/FLAME-WOMENST-SHIRT-BLACKGREYTIEDYE-1.jpg?v=1687890928",
+        "brand": "BrandD",
+        "price": 89.99,
+        "stock": 15
+      },
+      {
+        "image": "https://shop.thrashermagazine.com/cdn/shop/files/FLAME-WOMENST-SHIRT-BLACKGREYTIEDYE-1.jpg?v=1687890928",
+        "brand": "BrandE",
+        "price": 19.99,
+        "stock": 40
+      }
+    ]
+  }
+  
