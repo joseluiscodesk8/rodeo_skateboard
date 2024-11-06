@@ -8,6 +8,11 @@ const nextConfig = {
             port: '',
             pathname: '/**', // Allow all paths for ibb.co
           },
+          {
+            protocol: 'https',
+            hostname: 'shop.thrashermagazine.com',
+            pathname: '/cdn/shop/files/**',
+          },
         ],
       },
 };
