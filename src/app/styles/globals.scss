@@ -10,44 +10,4 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  padding: 2%;
-  background-image: url('https://i.ibb.co/FbPVBNz/1000118515.png');
-  background-size: 250px;
-  background-repeat: no-repeat;
-  background-position: 101% (-40%); 
-  height: 60px;
-  box-shadow: 0 5px 5px #969696;
-  animation: moveBackgroundH1 10s ease-in-out infinite;
-}
-
-@keyframes moveBackgroundH1 {
-  0%, 100% {
-    background-position: 101% 100%; /* Start and end at 100% Y */
-  }
-  50% {
-    background-position: 101% (-40%) /* Midway move to 0% Y */
-  }
-}
-
-.clothes {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 60px;
-  background-image: url('https://i.ibb.co/RcNYjWz/1000118516.png');
-  background-size: 250px;
-  background-repeat: no-repeat;
-  background-position: 101% 135%;
-  animation: moveBackground 10s ease-in-out infinite; 
-}
-
-@keyframes moveBackground {
-  0%, 100% {
-    background-position: 101% 135%; /* Start and end at 100% Y */
-  }
-  50% {
-    background-position: 101% 0%; /* Midway move to 0% Y */
-  }
-}
 

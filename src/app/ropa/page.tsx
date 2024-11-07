@@ -1,3 +1,5 @@
+'use client'
+
 import dynamic from "next/dynamic";
 
 const DynamicClothes = dynamic(() => import('../components/ClothesList'));

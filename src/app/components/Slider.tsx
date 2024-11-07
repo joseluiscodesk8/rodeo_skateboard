@@ -20,10 +20,10 @@ const Slider: React.FC = () => {
         modules={[Autoplay]}
       >
         <SwiperSlide>
-          <Image src={"/photo1.avif"} width={450} height={450} alt="sk8" loading="lazy" />
+          <Image src={"/photo1.avif"} width={450} height={450} alt="sk8" priority />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={"/photo2.avif"} width={450} height={450} alt="sk8" loading="lazy" />
+          <Image src={"/photo2.avif"} width={450} height={450} alt="sk8" priority />
         </SwiperSlide>
         {/* Add more slides as needed */}
       </Swiper>

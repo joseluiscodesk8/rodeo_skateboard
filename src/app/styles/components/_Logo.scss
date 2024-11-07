@@ -4,7 +4,7 @@
   height: 80vh;
   transition: display 0.3s ease;
 
-  &.hidden {
+  & .hidden {
     display: none;
   }
 }
