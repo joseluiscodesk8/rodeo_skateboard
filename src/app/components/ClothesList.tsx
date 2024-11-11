@@ -16,7 +16,7 @@ const ClothesList: React.FC = () => {
 
   return (
     <>
-    <Title title="CAMISETAS"/>
+    <Title title={["CAMISETAS", "SKATE OR DIE"]}/>
       <main className={styles.clothesList}>
       {clothes.map((item, index) => (
         <div key={index} className={styles.clothingItem}>

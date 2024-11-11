@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 const DynamicLogo = dynamic(() => import('../components/Logo'));
-const DynamicHeader = dynamic(() => import('../components/Header'));
+const DynamicHeader = dynamic(() => import('../components/Title'));
 const DynamicSlider = dynamic(() => import('../components/Slider'));
 const DynamicSection = dynamic(() => import('../components/Section'));
 const DynamicBegon = dynamic(() => import('../components/Begon'));
@@ -23,7 +23,7 @@ export default function Home() {
     <>
       {isLogoAnimationComplete && (
           <div>
-            <DynamicHeader />
+            <DynamicHeader title={["SOMOS", "ENFERMOS", "DESQUISIADOS", "PARANOICOS", "X EL SK8"]} />
             <DynamicSlider />
             <DynamicSection /> 
             <DynamicBegon />

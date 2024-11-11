@@ -14,7 +14,7 @@ const Logo: React.FC<LogoProps> = ({ onAnimationComplete }) => {
   const [isHidden, setIsHidden] = useState(false); // Estado para controlar la visibilidad
 
   return (
-    <div className={`${styles.logoContainer} ${isHidden ? styles.hidden : ""}`}>
+    <div className={isHidden ? styles.hidden : styles.LogoContainer}>
       <motion.div
         initial={{ opacity: 0, scale: 0.5, rotate: 0 }} // Posición inicial
         animate={shouldAnimate ? { opacity: 1, scale: 1, rotate: 360 } : {}} // Animación de entrada
