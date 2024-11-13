@@ -31,6 +31,10 @@
   background-position: 101% 135%;
   animation: moveBackground 10s ease-in-out infinite;
 
+  & .carIcon {
+    font-size: 1.5rem;
+  }
+
   & button {
     background: transparent;
     border: none;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
 import Link from "next/link";
 import styles from "../styles/index.module.scss";
 
@@ -25,9 +26,9 @@ const Title: React.FC<TitleProps> = ({ title }) => {
 
   // Animation variants for the sliding carousel effect
   const wordAnimation = {
-    hidden: { x: "100%", opacity: 0 },   // Word starts off-screen to the right
-    visible: { x: 0, opacity: 1 },       // Word slides into the center
-    exit: { x: "-100%", opacity: 0 },    // Word slides out to the left
+    hidden: { x: "100%", opacity: 0 }, // Word starts off-screen to the right
+    visible: { x: 0, opacity: 1 }, // Word slides into the center
+    exit: { x: "-100%", opacity: 0 }, // Word slides out to the left
   };
 
   return (
@@ -48,13 +49,15 @@ const Title: React.FC<TitleProps> = ({ title }) => {
         </AnimatePresence>
       </h1>
 
-      <div className={styles.clothes}>
-        <FaSearch />
+      <section className={styles.clothes}>
+        <Link href={"/cart"}>
+          <FiShoppingCart className={styles.carIcon} />
+        </Link>
         <input type="text" placeholder="Search..." />
         <button onClick={toggleMenu} className={styles.menuToggle}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
-      </div>
+      </section>
 
       <nav className={styles.menuCategories}>
         <ul>

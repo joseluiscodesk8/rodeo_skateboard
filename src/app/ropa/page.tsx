@@ -1,11 +1,12 @@
 'use client'
 
+import { NextPage } from "next";
 import dynamic from "next/dynamic";
 
 const DynamicClothes = dynamic(() => import('../components/ClothesList'));
 const DynamicFooter = dynamic(() => import('../components/Footer'));
 
-const Ropa: React.FC = () => {
+const Ropa: NextPage = () => {
     return <>
         <DynamicClothes />
         <DynamicFooter />
