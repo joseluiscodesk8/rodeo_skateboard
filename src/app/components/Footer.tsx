@@ -5,12 +5,24 @@ import {
   FaWhatsapp,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion"; // Importar Framer Motion
 
 const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
+    <motion.footer
+      className={styles.footer}
+      initial={{ opacity: 0 }} // Inicia con opacidad 0
+      animate={{ opacity: 1 }} // Se anima a opacidad 1
+      exit={{ opacity: 0 }}    // Se desvanece a 0 cuando sale
+      transition={{ duration: 0.5 }} // Duración de la animación
+    >
       {/* Mapa */}
-      <div className={styles.mapContainer}>
+      <motion.div
+        className={styles.mapContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8080730922236!2d-75.5829927!3d6.2053149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46827857a032a7%3A0x53df4de7393e8582!2sRodeo%20Skateboard!5e0!3m2!1ses!2sco!4v1698533059462!5m2!1ses!2sco"
           width="100%"
@@ -20,16 +32,26 @@ const Footer: React.FC = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+      </motion.div>
 
       {/* Información de ubicación */}
-      <div className={styles.locationInfo}>
+      <motion.div
+        className={styles.locationInfo}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
         <FaMapMarkerAlt className={styles.locationIcon} />
         <p>Calle 2 sur#50f-51</p>
-      </div>
+      </motion.div>
 
       {/* Redes sociales */}
-      <div className={styles.socialMedia}>
+      <motion.div
+        className={styles.socialMedia}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
         <a
           href="https://www.instagram.com"
           target="_blank"
@@ -51,10 +73,15 @@ const Footer: React.FC = () => {
         >
           <FaWhatsapp />
         </a>
-      </div>
+      </motion.div>
 
       {/* Lista de marcas */}
-      <div className={styles.brands}>
+      <motion.div
+        className={styles.brands}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+      >
         <h4>Nuestras Marcas</h4>
         <ul>
           <li>Marca 1</li>
@@ -68,10 +95,17 @@ const Footer: React.FC = () => {
           <li>Marca 9</li>
           <li>Marca 10</li>
         </ul>
-      </div>
+      </motion.div>
 
-      <div className={styles.sk8}>PATINANDO TODOS LOS MARDITOS DIAS</div>
-    </footer>
+      <motion.div
+        className={styles.sk8}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
+        PATINANDO TODOS LOS MARDITOS DIAS
+      </motion.div>
+    </motion.footer>
   );
 };
 

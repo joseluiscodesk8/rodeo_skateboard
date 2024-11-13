@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 interface ClothingItem {
   image: string;
@@ -9,23 +9,44 @@ interface ClothingItem {
   stock: number;
 }
 
-
-type AppContextType = {
+interface AppContextType {
   cartItems: ClothingItem[];
   addItemToCart: (item: ClothingItem) => void;
-};
+  removeItemFromCart: (index: number) => void;
+}
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const AppProvider = ({ children }: { children: ReactNode }) => {
+export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cartItems, setCartItems] = useState<ClothingItem[]>([]);
+
+  // Cargar cartItems desde localStorage al cargar la aplicación
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cartItems");
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // Sincronizar el cartItems en localStorage cada vez que se actualice
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    } else {
+      localStorage.removeItem("cartItems"); // Si el carrito está vacío, eliminamos la clave
+    }
+  }, [cartItems]);
 
   const addItemToCart = (item: ClothingItem) => {
     setCartItems((prevItems) => [...prevItems, item]);
   };
 
+  const removeItemFromCart = (index: number) => {
+    setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
+  };
+
   return (
-    <AppContext.Provider value={{ cartItems, addItemToCart }}>
+    <AppContext.Provider value={{ cartItems, addItemToCart, removeItemFromCart }}>
       {children}
     </AppContext.Provider>
   );

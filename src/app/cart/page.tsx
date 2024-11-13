@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
 
-const DynamicHeader = dynamic(() => import('../components/Title'));
+const DynamicHeader = dynamic(() => import('../components/Menu'));
 const DynamicShopping = dynamic(() => import('../components/CartShopping'));
 
 const Cart: NextPage = () => {
