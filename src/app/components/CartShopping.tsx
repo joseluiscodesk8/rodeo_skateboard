@@ -1,12 +1,14 @@
 import { useAppContext } from "../context/AppContext";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion"; // Importamos Framer Motion
+import styles from "../styles/index.module.scss";
+
 
 const CartShopping: React.FC = () => {
   const { cartItems, removeItemFromCart } = useAppContext();
 
   return (
-    <div>
+    <div className={styles.cart}>
       <h2>Shopping Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -20,7 +22,6 @@ const CartShopping: React.FC = () => {
                 animate={{ opacity: 1 }}  // Se vuelve completamente visible
                 exit={{ opacity: 0 }}     // Desaparece con opacidad 0
                 transition={{ duration: 0.5 }} // Duración de la animación
-                style={{ zIndex: -10 }}
               >
                 <Image src={item.image} width={50} height={50} alt={item.brand} />
                 <p>{item.brand}</p>

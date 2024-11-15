@@ -3,6 +3,7 @@
 @use "./components/Sections";
 @use "./components/Begon";
 @use "./components/Menu";
+@use "./components/Cart";
 @use "./components/Footer";
 
 .Main {
@@ -17,28 +18,32 @@
     gap: 20px;
     margin: 20px auto;
     width: 100%;
-  }
-  
-  .clothingItem {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
+    position: relative;
+    z-index: -100;
 
-    & img {
-      box-shadow:  0 5px 5px #1416;
-    }
+    & .clothingItem {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
   
-    h3 {
-      margin: 10px 0;
-      font-size: 1.5rem;
-    }
-  
-    p {
-      margin: 5px 0;
-      font-size: 1rem;
+      & img {
+        box-shadow:  0 5px 5px #1416;
+      }
+    
+      h3 {
+        margin: 10px 0;
+        font-size: 1.5rem;
+      }
+    
+      p {
+        margin: 5px 0;
+        font-size: 1rem;
+      }
     }
   }
+  
+  
   
   .cartIconContainer {
     position: relative;

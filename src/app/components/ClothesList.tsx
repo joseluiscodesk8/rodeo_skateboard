@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Title from "./Menu";
 import clothesData from "../data/clothes.json";
 import styles from "../styles/index.module.scss";
 import { useAppContext } from "../context/AppContext";
@@ -28,7 +27,6 @@ const ClothesList: React.FC = () => {
 
   return (
     <>
-      <Title title={["CAMISETAS", "SKATE OR DIE"]} />
       <main className={styles.clothesList}>
         {clothes.map((item, index) => (
           <motion.div
@@ -38,7 +36,6 @@ const ClothesList: React.FC = () => {
             animate={{ opacity: 1 }} // Animación hacia opacidad 1
             exit={{ opacity: 0 }}    // Se desvanece hacia opacidad 0 al eliminar
             transition={{ duration: 0.5 }} // Duración de la animación
-            style={{ zIndex: -10 }}
           >
             <Image src={item.image} width={250} height={250} alt={item.brand} priority />
             <h3>{item.brand}</h3>
